@@ -15,3 +15,9 @@ variable "environment" {
   type        = string
   default     = "dev"
 }
+
+variable "availability_zone" {
+  description = "AWS Availability Zone"
+  type        = string
+  default     = "eu-central-1a"
+}
