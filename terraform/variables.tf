@@ -27,3 +27,15 @@ variable "allowed_ssh_cidr" {
   type        = string
   default     = "0.0.0.0/0"
 }
+
+
+variable "instance_type" {
+  description = "EC2 instance type"
+  type        = string
+  default     = "t3.micro"
+}
+
+variable "key_pair_name" {
+  description = "AWS EC2 Key Pair name"
+  type        = string
+}
