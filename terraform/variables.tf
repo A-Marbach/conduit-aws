@@ -21,3 +21,9 @@ variable "availability_zone" {
   type        = string
   default     = "eu-central-1a"
 }
+
+variable "allowed_ssh_cidr" {
+  description = "CIDR block allowed for SSH access"
+  type        = string
+  default     = "0.0.0.0/0"
+}
