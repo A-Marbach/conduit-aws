@@ -1,0 +1,18 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+
+# Terraform lock file
+# Diese Datei versionieren wir bewusst
+#! .terraform.lock.hcl
+
+# Environment
+.env
+
+# IDE
+.vscode/
+
+# macOS
+.DS_Store
