@@ -1,0 +1,18 @@
+---
+- name: Create application directory
+  ansible.builtin.file:
+    path: /opt/conduit
+    state: directory
+    owner: ubuntu
+    group: ubuntu
+    mode: "0755"
+
+- name: Clone conduit repository
+  become: true
+  become_user: ubuntu
+  ansible.builtin.git:
+    repo: https://github.com/A-Marbach/conduit-container.git
+    dest: /opt/conduit
+    version: main
+    recursive: true
+    update: true
