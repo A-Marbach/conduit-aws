@@ -1,5 +1,5 @@
 [web]
-aws-server ansible_host=18.196.195.161
+aws-server ansible_host=3.121.180.229
 
 [web:vars]
 ansible_user=ubuntu
