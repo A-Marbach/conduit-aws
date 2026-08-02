@@ -1,0 +1,49 @@
+---
+- name: Update apt cache
+  ansible.builtin.apt:
+    update_cache: true
+
+- name: Install NGINX
+  ansible.builtin.apt:
+    name: nginx
+    state: present
+
+
+- name: Copy NGINX configuration
+  ansible.builtin.template:
+    src: conduit.conf.j2
+    dest: /etc/nginx/sites-available/conduit
+    owner: root
+    group: root
+    mode: "0644"
+
+- name: Enable conduit site
+  ansible.builtin.file:
+    src: /etc/nginx/sites-available/conduit
+    dest: /etc/nginx/sites-enabled/conduit
+    state: link
+
+- name: Remove default NGINX site
+  ansible.builtin.file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+
+- name: Test NGINX configuration
+  ansible.builtin.command: nginx -t
+  changed_when: false
+
+- name: Enable NGINX
+  ansible.builtin.systemd:
+    name: nginx
+    enabled: true
+
+- name: Start NGINX
+  ansible.builtin.systemd:
+    name: nginx
+    state: started
+
+
+- name: Reload NGINX
+  ansible.builtin.systemd:
+    name: nginx
+    state: reloaded

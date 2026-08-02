@@ -1,3 +1,4 @@
 ---
 backend_debug: true
 backend_secret_key: your-secret-key-here
+django_allowed_hosts: "*"

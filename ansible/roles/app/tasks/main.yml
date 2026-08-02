@@ -24,3 +24,14 @@
     owner: ubuntu
     group: ubuntu
     mode: "0644"
+
+- name: Pull Docker images
+  ansible.builtin.command:
+    cmd: docker compose pull
+    chdir: /opt/conduit
+
+
+- name: Start application
+  ansible.builtin.command:
+    cmd: docker compose up -d
+    chdir: /opt/conduit
