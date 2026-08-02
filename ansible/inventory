@@ -1,0 +1,6 @@
+[web]
+aws-server ansible_host=3.75.224.187
+
+[web:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=~/.ssh/conduit-key.pem

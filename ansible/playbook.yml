@@ -1,0 +1,7 @@
+---
+- name: Configure AWS EC2 Server
+  hosts: web
+  become: true
+
+  roles:
+    - docker
