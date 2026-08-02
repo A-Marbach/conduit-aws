@@ -1,1 +1,1 @@
-key_pair_name = "DEIN_KEYPAIR"
+key_pair_name = "conduit-key"
