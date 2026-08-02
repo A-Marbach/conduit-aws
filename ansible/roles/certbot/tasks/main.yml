@@ -1,0 +1,22 @@
+---
+- name: Update apt cache
+  ansible.builtin.apt:
+    update_cache: true
+
+- name: Install Certbot
+  ansible.builtin.apt:
+    name:
+      - certbot
+      - python3-certbot-nginx
+    state: present
+
+- name: Obtain Let's Encrypt certificate
+  ansible.builtin.command: >
+    certbot --nginx
+    -d conduit.marbachsystems.de
+    --non-interactive
+    --agree-tos
+    --email kontakt@marbachsystems.de
+    --redirect
+  args:
+    creates: /etc/letsencrypt/live/conduit.marbachsystems.de/fullchain.pem
