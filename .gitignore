@@ -4,6 +4,12 @@
 *.tfstate.*
 crash.log
 
+# Local Terraform variables
+terraform.tfvars
+
+# Terraform plan files
+*.tfplan
+
 # Terraform lock file
 # Diese Datei versionieren wir bewusst
 #! .terraform.lock.hcl
