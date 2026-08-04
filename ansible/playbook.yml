@@ -8,3 +8,4 @@
     - app
     - nginx
     - certbot
+    - cloudwatch
