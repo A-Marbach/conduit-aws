@@ -124,7 +124,7 @@ Application secured with Let's Encrypt.
 docker ps
 ```
 
-![Running Docker Containers](screenshots/docker-ps.png)
+![Running Docker Containers](screenshots/docker-containers.png)
 
 ---
 
