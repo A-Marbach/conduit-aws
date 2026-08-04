@@ -97,12 +97,12 @@ Application container images are built and published by a separate application r
 ### AWS Infrastructure
 Terraform-provisioned AWS infrastructure.
 
-> `screenshots/aws-infrastructure.png`
+> `screenshots/aws-ec2-instance.png`
 
 ### Application CI/CD Pipeline
 Docker image build, security scanning and publishing through the application repository.
 
-> `screenshots/github-actions.png`
+> `screenshots/github-actions-pipeline.png`
 
 ### CloudWatch Dashboard
 Infrastructure monitoring with CPU, memory, disk and network metrics.
@@ -112,7 +112,7 @@ Infrastructure monitoring with CPU, memory, disk and network metrics.
 ### HTTPS Deployment
 Application secured with Let's Encrypt.
 
-> `screenshots/https-browser.png`
+> `screenshots/https-deployment.png`
 
 ### Running Containers
 

@@ -20,3 +20,21 @@
     --redirect
   args:
     creates: /etc/letsencrypt/live/conduit.marbachsystems.de/fullchain.pem
+
+
+- name: Copy HTTPS NGINX configuration
+  ansible.builtin.template:
+    src: conduit-https.j2
+    dest: /etc/nginx/sites-available/conduit
+    owner: root
+    group: root
+    mode: "0644"
+
+- name: Test NGINX configuration
+  ansible.builtin.command: nginx -t
+  changed_when: false
+
+- name: Reload NGINX
+  ansible.builtin.systemd:
+    name: nginx
+    state: reloaded
